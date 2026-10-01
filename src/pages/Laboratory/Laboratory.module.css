@@ -1,0 +1,38 @@
+/* Lab-centre specifics; shared facility styles live in Facility.module.css */
+
+.testRow { display: grid; grid-template-columns: 1fr 110px 110px 110px; gap: 10px; align-items: center; font-size: 13px; padding: 8px 0; border-bottom: 1px solid #f5f6fc; }
+.testRow:last-child { border-bottom: none; }
+.testRow small { display: block; font-size: 11.5px; color: #8898c8; margin-top: 1px; }
+.testHead { font-size: 10.5px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #8898c8; padding-bottom: 4px; }
+
+.resultRow { display: grid; grid-template-columns: 1.3fr 1fr 0.8fr 1fr 120px; gap: 8px; align-items: center; padding: 8px 0; border-bottom: 1px solid #f5f6fc; font-size: 13px; }
+.resultRow:last-of-type { border-bottom: none; }
+.resultName { font-weight: 600; color: var(--navy, #1f2a4d); min-width: 0; }
+.resultName small { display: block; font-weight: 400; font-size: 11.5px; color: #8898c8; }
+.criticalRow { background: #fef2f2; border-radius: 8px; margin: 0 -8px; padding-left: 8px; padding-right: 8px; }
+
+.choice { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.choice label { display: flex; gap: 10px; align-items: flex-start; border: 1.5px solid #e3e7f5; border-radius: 10px; padding: 12px 14px; cursor: pointer; font-size: 13px; color: #3a4570; background: #fff; }
+.choice label strong { display: block; color: var(--navy, #1f2a4d); font-size: 13.5px; }
+.choiceLabel { display: block; font-size: 12.5px; font-weight: 600; color: var(--navy, #1f2a4d); margin-bottom: 6px; }
+.choice input { width: auto; height: auto; padding: 0; margin: 3px 0 0; flex: none; accent-color: var(--logo-bg); }
+.choice label > span { display: block; line-height: 1.45; }
+.chosen { border-color: var(--logo-bg) !important; background: #fffbeb !important; }
+.choice .off { opacity: 0.5; cursor: not-allowed; }
+
+.warn { background: #fffbeb; border-color: #fde68a; }
+.warn > div:first-child { color: #b45309; }
+
+.overdue { color: #dc2626; font-weight: 600; }
+.tag { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 1px 7px; border-radius: 10px; background: #fef3c7; color: #92400e; margin-left: 4px; vertical-align: 1px; }
+.tagMuted { background: #eef0f8; color: #5a6690; }
+
+@media (max-width: 768px) {
+  .testRow { grid-template-columns: 1fr 1fr 1fr; }
+  .testRow > :first-child { grid-column: 1 / -1; }
+  .testHead { display: none; }
+  .resultRow { grid-template-columns: 1fr 1fr; }
+  .resultName { grid-column: 1 / -1; }
+  .resultHead { display: none; }
+  .choice { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,79 @@
+/* Lab scientist / pharmacist portal — emerald accents. */
+
+/* ── Welcome hero ── */
+.hero {
+  background: linear-gradient(135deg, #0c1a3a 0%, #1a2d6b 100%);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 85% 50%, rgba(5, 150, 105, 0.22) 0%, transparent 60%);
+  pointer-events: none;
+}
+.heroLeft { position: relative; min-width: 0; flex: 1; }
+.heroTag { font-size: 10.5px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #6ee7b7; margin-bottom: 6px; }
+.heroTitle { font-family: 'DM Serif Display', serif; font-size: 1.55rem; color: #fff; margin-bottom: 6px; line-height: 1.25; }
+.heroSub { font-size: 13px; color: #8898c8; }
+.heroSub strong { color: #c5cde8; }
+.heroRight { display: grid; grid-template-columns: repeat(3, auto); gap: 10px; position: relative; flex-shrink: 0; }
+.heroStat { background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 14px 18px; text-align: center; min-width: 96px; }
+.heroVal { font-size: 21px; font-weight: 700; color: #fff; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.heroLbl { font-size: 11px; color: #8898c8; margin-top: 2px; white-space: nowrap; }
+
+.grid31 { display: grid; grid-template-columns: 3fr 2fr; gap: 16px; margin-bottom: 24px; align-items: start; }
+
+.viewAll { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px; font-size: 12.5px; font-weight: 600; color: #059669; border-top: 1px solid #f0f2fb; text-decoration: none; }
+.viewAll:hover { color: #047857; }
+.viewAll svg { width: 13px; height: 13px; }
+
+/* ── Visits (collections / deliveries) ── */
+.visits { padding: 8px 16px 16px; display: flex; flex-direction: column; gap: 10px; }
+.visit { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; background: #f8f9fc; border: 1px solid #eef0f8; border-radius: 9px; }
+.time { min-width: 56px; text-align: center; background: #ecfdf5; color: #047857; border-radius: 8px; padding: 6px 4px; font-weight: 700; font-size: 13px; font-variant-numeric: tabular-nums; }
+.time small { display: block; font-size: 10px; font-weight: 600; color: #059669; }
+.visitBody { flex: 1; min-width: 0; }
+.visitBody h4 { font-size: 13px; font-weight: 700; color: var(--navy); display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.visitBody p { font-size: 12px; color: #8898c8; margin-top: 2px; }
+.visitActions { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+.maps { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; color: #059669; text-decoration: none; white-space: nowrap; }
+.maps svg { width: 12px; height: 12px; }
+.maps:hover { color: #047857; }
+
+.day { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #8898c8; padding: 14px 16px 2px; }
+
+/* ── Accept form price rows ── */
+.priceRow { display: grid; grid-template-columns: 1fr 150px 110px; gap: 10px; align-items: center; font-size: 13px; }
+
+/* ── Stock ── */
+.low { color: #dc2626; font-weight: 700; }
+.okStock { color: #16a34a; font-weight: 700; }
+
+.activity { padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 12px; }
+.actItem { display: flex; align-items: flex-start; gap: 10px; }
+.actDot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+.actText { font-size: 13px; color: #3a4570; line-height: 1.5; flex: 1; }
+.actTime { font-size: 11.5px; color: #b0b8d0; white-space: nowrap; }
+
+@media (max-width: 1200px) {
+  .hero { flex-direction: column; align-items: flex-start; }
+  .grid31 { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .hero { padding: 20px; }
+  .heroRight { width: 100%; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .heroStat { min-width: 0; padding: 10px 6px; }
+  .heroVal { font-size: 17px; }
+  .heroLbl { white-space: normal; }
+  .priceRow { grid-template-columns: 1fr 110px; }
+  .priceRow > :last-child { display: none; }
+}

@@ -1,0 +1,71 @@
+/* Partner facility portals (hospital, pharmacy). Accent comes from the nav theme (--logo-bg). */
+
+.hero {
+  background: linear-gradient(135deg, #0c1a3a 0%, #1a2d6b 100%);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.heroLeft { position: relative; min-width: 0; flex: 1; }
+.heroTag { font-size: 10.5px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--nav-active-fg, #93c5fd); margin-bottom: 6px; }
+.heroTitle { font-family: 'DM Serif Display', serif; font-size: 1.55rem; color: #fff; margin-bottom: 6px; line-height: 1.25; }
+.heroSub { font-size: 13px; color: #8898c8; }
+.heroSub strong { color: #c5cde8; }
+.heroRight { display: grid; grid-template-columns: repeat(3, auto); gap: 10px; position: relative; flex-shrink: 0; }
+.heroStat { background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 14px 18px; text-align: center; min-width: 96px; }
+.heroVal { font-size: 21px; font-weight: 700; color: #fff; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.heroLbl { font-size: 11px; color: #8898c8; margin-top: 2px; white-space: nowrap; }
+
+.grid31 { display: grid; grid-template-columns: 3fr 2fr; gap: 16px; margin-bottom: 24px; align-items: start; }
+
+.viewAll { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px; font-size: 12.5px; font-weight: 600; color: var(--logo-bg); border-top: 1px solid #f0f2fb; text-decoration: none; }
+.viewAll svg { width: 13px; height: 13px; }
+
+/* ── Referral / order detail ── */
+.block { border: 1px solid #eef0f8; border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; background: #fafbff; }
+.blockTitle { font-size: 10.5px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #8898c8; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+.blockTitle svg { width: 13px; height: 13px; }
+.blockText { font-size: 13.5px; color: #1f2a4d; line-height: 1.6; white-space: pre-wrap; word-break: break-word; }
+.alert { background: #fef2f2; border-color: #fecaca; }
+.alert .blockTitle { color: #b91c1c; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 20px; background: #eef0f8; color: #3a4570; }
+.vitals { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; }
+.vital { background: #fff; border: 1px solid #eef0f8; border-radius: 8px; padding: 8px 10px; }
+.vital span { display: block; font-size: 10.5px; color: #8898c8; text-transform: uppercase; letter-spacing: 0.5px; }
+.vital strong { font-size: 14px; color: var(--navy); font-variant-numeric: tabular-nums; }
+
+/* ── Order lines / invoice lines ── */
+.lineRow { display: grid; grid-template-columns: 1fr 70px 130px 110px 34px; gap: 8px; align-items: center; font-size: 13px; }
+.lineHead { font-size: 10.5px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #8898c8; }
+.orderRow { display: grid; grid-template-columns: 1fr 90px 130px 110px; gap: 10px; align-items: center; font-size: 13px; padding: 8px 0; border-bottom: 1px solid #f5f6fc; }
+.orderRow:last-child { border-bottom: none; }
+.total { display: flex; justify-content: flex-end; gap: 16px; font-size: 14px; padding-top: 10px; border-top: 1px solid #eef0f8; margin-top: 6px; }
+.total strong { color: var(--navy); font-variant-numeric: tabular-nums; }
+.unavailable { color: #b0b8d0; text-decoration: line-through; }
+
+.flow { display: flex; gap: 6px; flex-wrap: wrap; font-size: 11.5px; color: #8898c8; margin: 4px 0 14px; align-items: center; }
+.flow b { color: var(--navy); }
+.flow svg { width: 12px; height: 12px; }
+
+@media (max-width: 1200px) {
+  .hero { flex-direction: column; align-items: flex-start; }
+  .grid31 { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .hero { padding: 20px; }
+  .heroRight { width: 100%; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .heroStat { min-width: 0; padding: 10px 6px; }
+  .heroVal { font-size: 17px; }
+  .heroLbl { white-space: normal; }
+  .lineRow { grid-template-columns: 1fr 56px 100px 30px; }
+  .lineRow > :nth-child(4) { display: none; }
+  .orderRow { grid-template-columns: 1fr 70px 100px; }
+  .orderRow > :nth-child(4) { display: none; }
+}

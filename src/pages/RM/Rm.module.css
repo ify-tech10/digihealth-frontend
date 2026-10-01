@@ -1,0 +1,48 @@
+/* Relationship Manager portal */
+
+.picker { display: flex; flex-direction: column; gap: 10px; }
+.pick {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1.5px solid #e8eaf4;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+}
+.pick:hover, .pick:focus-visible { border-color: #1e7fd4; background: #f0f7fe; outline: none; }
+.pick > span:nth-child(2) { flex: 1; }
+.pick strong { display: block; font-size: 14px; color: var(--navy); }
+.pick small { font-size: 12px; color: #8898c8; }
+.pick > svg { width: 16px; height: 16px; color: #8898c8; }
+.pickIcon { width: 38px; height: 38px; border-radius: 9px; background: #e8f3fc; color: #1e7fd4; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.pickIcon svg { width: 18px; height: 18px; }
+
+.checks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+
+.quick { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+.qa {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1.5px solid #e8eaf4;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: border-color 0.15s;
+}
+.qa:hover { border-color: #1e7fd4; }
+.qa strong { display: block; font-size: 13.5px; color: var(--navy); }
+.qa small { font-size: 12px; color: #8898c8; }
+
+@media (max-width: 768px) {
+  .checks { grid-template-columns: 1fr; }
+  .quick { grid-template-columns: 1fr; }
+}

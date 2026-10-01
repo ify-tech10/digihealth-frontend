@@ -1,0 +1,54 @@
+.footer {
+  background: #1c2140;
+  color: #c5cde8;
+  padding: 56px 48px 0;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footerBrand { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.footerLogo {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 700; font-size: 12px;
+}
+.footerBrandText strong { display: block; font-weight: 600; font-size: 14px; color: #fff; }
+.footerBrandText span { font-size: 11.5px; color: #7888b8; }
+
+.footerCol p { font-size: 14px; color: #8898c8; line-height: 1.65; margin-bottom: 12px; }
+.hours { font-size: 12.5px !important; color: #5a6890 !important; }
+
+.footerCol h4 { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+.footerCol ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footerCol ul li a { font-size: 14px; color: #8898c8; text-decoration: none; transition: color .18s; }
+.footerCol ul li a:hover { color: #fff; }
+
+.footerContact ul li { font-size: 14px; color: #8898c8; }
+.footerContact ul li a { color: var(--green); text-decoration: none; }
+.footerContact ul li a:hover { text-decoration: underline; }
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  font-size: 13px;
+  color: #4a5880;
+}
+
+@media (max-width: 900px) {
+  .footer { padding: 40px 20px 0; }
+  .footerGrid { grid-template-columns: 1fr; gap: 32px; }
+  .footerBottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+@media (max-width: 480px) {
+  .footer { padding: 32px 16px 0; }
+}

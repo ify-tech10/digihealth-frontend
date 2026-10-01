@@ -1,0 +1,770 @@
+
+.page {
+  --navy: #092f3f;
+  --navy-dark: #062531;
+  --green: #35a66f;
+  --green-dark: #278656;
+  --cream: #f6f5ef;
+  --cream-dark: #ebe9df;
+  --white: #ffffff;
+  --text: #17323d;
+  --muted: #64767d;
+  --border: #dce4e3;
+  --shadow: 0 16px 40px rgba(9, 47, 63, 0.08);
+
+  width: 100%;
+  min-height: 100vh;
+  color: var(--text);
+  background: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+.page *,
+.page *::before,
+.page *::after {
+  box-sizing: border-box;
+}
+
+.page a {
+  text-decoration: none;
+}
+
+.icon {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  width: 100%;
+  padding: 86px 6% 80px;
+  background: rgb(24, 24, 105);
+  color: var(--white);
+}
+
+.heroGrid {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.92fr);
+  gap: 70px;
+  align-items: center;
+}
+
+.heroContent {
+  max-width: 720px;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #d8f3e6;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 760px;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(42px, 5vw, 70px);
+  line-height: 1.04;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+.heroDesc {
+  max-width: 680px;
+  margin: 28px 0 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.heroCta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.btnOutlineWhite,
+.btnGreen,
+.btnOutlineNavy,
+.btnGreenSm,
+.btnOutlineNavyLg,
+.btnGreenLg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 0 19px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btnOutlineWhite {
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  color: var(--white);
+  background: transparent;
+}
+
+.btnOutlineWhite:hover {
+  background: var(--white);
+  color: var(--navy);
+  transform: translateY(-2px);
+}
+
+.btnGreen {
+  border: 1px solid var(--green);
+  background: var(--green);
+  color: var(--white);
+}
+
+.btnGreen:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+.heroTagline {
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+.heroRight {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.heroImgPlaceholder {
+  width: 100%;
+  min-height: 430px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #dceae5;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+}
+
+.heroImgPlaceholder img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  object-fit: cover;
+}
+
+.bestFitBox {
+  padding: 25px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.bestFitBox h4 {
+  margin: 0 0 13px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.bestFitBox ul {
+  margin: 0;
+  padding-left: 20px;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.bestFitBox li {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* =========================
+   INSIGHT ROW
+========================= */
+
+.insightRow {
+  width: min(1200px, calc(100% - 12%));
+  margin: -1px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  position: relative;
+  z-index: 2;
+}
+
+.insightCard {
+  padding: 28px 30px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.insightCard h3 {
+  margin: 0 0 10px;
+  color: var(--navy);
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.insightCard p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================
+   INCLUDED
+========================= */
+
+.includedSection {
+  width: min(1100px, calc(100% - 12%));
+  margin: 0 auto;
+  padding: 100px 0 95px;
+}
+
+.includedLabel,
+.ftmLabel,
+.ctaLabel,
+.bannerLabel {
+  margin: 0 0 13px;
+  color: var(--green-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.includedSection h2 {
+  max-width: 760px;
+  margin: 0 0 45px;
+  color: var(--navy);
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(34px, 4vw, 50px);
+  line-height: 1.12;
+  font-weight: 400;
+}
+
+.includedGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.includedCard {
+  display: flex;
+  gap: 20px;
+  min-height: 150px;
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--white);
+}
+
+.includedCard.full {
+  grid-column: 1 / -1;
+}
+
+.incIcon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #e8f5ef;
+  color: var(--green-dark);
+}
+
+.incIcon svg {
+  width: 25px;
+  height: 25px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.incText h3 {
+  margin: 2px 0 8px;
+  color: var(--navy);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.incText p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* =========================
+   PLANS
+========================= */
+
+.plansSection {
+  padding: 95px 6%;
+  background: var(--cream);
+}
+
+.plansGrid {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.planCard {
+  display: flex;
+  flex-direction: column;
+  padding: 31px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: var(--white);
+  min-height: 370px;
+}
+
+.planCard.premium {
+  border: 2px solid var(--green);
+  box-shadow: 0 18px 45px rgba(53, 166, 111, 0.1);
+}
+
+.planCard h3 {
+  margin: 0 0 13px;
+  color: var(--navy);
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.planCard p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.planBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: auto;
+  padding-top: 28px;
+}
+
+.btnOutlineNavy {
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  background: transparent;
+}
+
+.btnOutlineNavy:hover,
+.btnOutlineNavyLg:hover {
+  background: var(--navy);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btnGreenSm {
+  min-height: 42px;
+  padding: 0 15px;
+  border: 1px solid var(--green);
+  background: var(--green);
+  color: var(--white);
+  font-size: 13px;
+}
+
+.btnGreenSm:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+.planCoord {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.planCoord:hover {
+  color: var(--green-dark);
+}
+
+.planCoord svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* =========================
+   FIRST TIME MOTHERS
+========================= */
+
+.ftmSection {
+  width: min(850px, calc(100% - 12%));
+  margin: 0 auto;
+  padding: 105px 0;
+  text-align: center;
+}
+
+.ftmSection h2 {
+  margin: 0;
+  color: var(--navy);
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.ftmSection > p:last-child {
+  max-width: 700px;
+  margin: 22px auto 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* =========================
+   TESTIMONIAL
+========================= */
+
+.testimonialSection {
+  padding: 80px 6%;
+  background: #eef5f1;
+}
+
+.testimonialCard {
+  width: min(850px, 100%);
+  margin: 0 auto;
+  padding: 50px;
+  border-radius: 18px;
+  background: var(--white);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.testimonialQuote {
+  margin: 0;
+  color: var(--navy);
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(25px, 3vw, 36px);
+  line-height: 1.35;
+}
+
+.testimonialAuthor {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 27px;
+}
+
+.testimonialAuthor strong {
+  color: var(--navy);
+  font-size: 14px;
+}
+
+.testimonialAuthor span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =========================
+   BOOK BANNER
+========================= */
+
+.bookBanner {
+  padding: 90px 6%;
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+}
+
+.bookBanner h2 {
+  margin: 0;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.bookBanner > p:not(.bannerLabel) {
+  width: min(680px, 100%);
+  margin: 20px auto 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.bannerBtns {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.bookBanner > .btnOutlineWhite {
+  margin-top: 10px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.ctaSection {
+  width: min(850px, calc(100% - 12%));
+  margin: 0 auto;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.ctaSection h2 {
+  margin: 0;
+  color: var(--navy);
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(35px, 4vw, 50px);
+  line-height: 1.12;
+  font-weight: 400;
+}
+
+.ctaSection > p:not(.ctaLabel) {
+  max-width: 700px;
+  margin: 20px auto 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.ctaBtns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 30px;
+}
+
+.btnOutlineNavyLg,
+.btnGreenLg {
+  min-height: 50px;
+  padding: 0 21px;
+}
+
+.btnOutlineNavyLg {
+  border: 1px solid var(--navy);
+  background: transparent;
+  color: var(--navy);
+}
+
+.btnGreenLg {
+  border: 1px solid var(--green);
+  background: var(--green);
+  color: var(--white);
+}
+
+.btnGreenLg:hover {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1050px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .heroContent {
+    max-width: 850px;
+  }
+
+  .heroRight {
+    max-width: 700px;
+  }
+
+  .plansGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .planCard {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding: 60px 5% 65px;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 10vw, 52px);
+  }
+
+  .heroDesc {
+    font-size: 15px;
+  }
+
+  .heroCta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .heroCta a {
+    width: 100%;
+  }
+
+  .heroImgPlaceholder,
+  .heroImgPlaceholder img {
+    min-height: 330px;
+  }
+
+  .insightRow {
+    width: 90%;
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+  }
+
+  .includedSection {
+    width: 90%;
+    padding: 75px 0;
+  }
+
+  .includedGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .includedCard.full {
+    grid-column: auto;
+  }
+
+  .plansSection {
+    padding: 70px 5%;
+  }
+
+  .ftmSection {
+    width: 90%;
+    padding: 75px 0;
+  }
+
+  .testimonialSection {
+    padding: 60px 5%;
+  }
+
+  .testimonialCard {
+    padding: 35px 25px;
+  }
+
+  .bookBanner {
+    padding: 70px 5%;
+  }
+
+  .bannerBtns {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .bannerBtns a {
+    width: 100%;
+  }
+
+  .bookBanner > .btnOutlineWhite {
+    width: 100%;
+  }
+
+  .ctaSection {
+    width: 90%;
+    padding: 75px 0;
+  }
+
+  .ctaBtns {
+    flex-direction: column;
+  }
+
+  .ctaBtns a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 45px 5% 55px;
+  }
+
+  .heroBadge {
+    font-size: 11px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .bestFitBox {
+    padding: 21px;
+  }
+
+  .insightCard {
+    padding: 23px;
+  }
+
+  .includedCard {
+    padding: 21px;
+    flex-direction: column;
+  }
+
+  .planCard {
+    padding: 24px;
+  }
+
+  .planBtns {
+    flex-direction: column;
+  }
+
+  .planBtns a {
+    width: 100%;
+  }
+
+  .testimonialQuote {
+    font-size: 25px;
+  }
+}
+

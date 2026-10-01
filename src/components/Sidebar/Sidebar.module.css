@@ -1,0 +1,107 @@
+.sidebar {
+  width: var(--sidebar-w, 240px);
+  flex-shrink: 0;
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 50;
+  overflow-y: auto;
+  transition: transform 0.25s ease;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+}
+
+.logo {
+  width: 34px;
+  height: 34px;
+  background: var(--logo-bg, rgba(255, 255, 255, 0.12));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.brandText strong { display: block; font-size: 13px; font-weight: 700; color: #fff; }
+.brandText span { font-size: 11px; color: #7888b8; }
+
+.navigation { flex: 1; padding: 16px 12px; }
+
+.sectionTitle {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #4a5880;
+  padding: 0 8px;
+  margin: 16px 0 6px;
+}
+.navigation > div:first-child .sectionTitle { margin-top: 0; }
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 7px;
+  color: #8898c8;
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  margin-bottom: 2px;
+}
+.navItem:hover { background: rgba(255, 255, 255, 0.07); color: #c5cde8; }
+.navItem.active { background: var(--nav-active-bg, rgba(255, 255, 255, 0.12)); color: var(--nav-active-fg, #fff); }
+
+.icon { width: 16px; height: 16px; flex-shrink: 0; }
+
+.badge {
+  margin-left: auto;
+  background: #ef4444;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+.badgeTeal { background: #0891b2; }
+
+.footer { padding: 16px 12px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 7px;
+  color: #8898c8;
+  font-size: 13.5px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: none;
+  background: none;
+  width: 100%;
+}
+.logoutButton:hover { background: rgba(239, 68, 68, 0.1); color: #f87171; }
+
+@media (max-width: 768px) {
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.open { transform: translateX(0); box-shadow: 0 0 40px rgba(0, 0, 0, 0.3); }
+}

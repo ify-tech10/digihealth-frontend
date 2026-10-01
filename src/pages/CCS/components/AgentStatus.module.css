@@ -1,0 +1,26 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.chip:disabled { opacity: 0.7; cursor: progress; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+
+.online { background: #f0fdf4; border-color: #bbf7d0; color: #16a34a; }
+.online .dot { background: #22c55e; }
+.away { background: #fff7ed; border-color: #fed7aa; color: #c2410c; }
+.away .dot { background: #f97316; }
+.failed { box-shadow: 0 0 0 2px #fecaca; }
+
+@media (max-width: 480px) {
+  .chip { padding: 9px; }
+  .label { display: none; }
+}

@@ -1,0 +1,296 @@
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f8f9fc;
+  color: #1a2550;
+}
+
+/* ─────────────────────────────
+   PRIVACY HEADER
+───────────────────────────── */
+
+.privacyHeader {
+  margin: 56px 48px 48px;
+  max-width: 560px;
+}
+
+.privacyLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8898c8;
+  margin-bottom: 16px;
+}
+
+.privacyHeader h1 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: #1a2550;
+  line-height: 1.15;
+  margin: 0 0 18px;
+}
+
+.privacyHeader > p:last-child {
+  font-size: 15px;
+  color: #5a6690;
+  line-height: 1.7;
+}
+
+/* ─────────────────────────────
+   POLICY CARDS
+───────────────────────────── */
+
+.policySection {
+  margin: 0 48px 64px;
+}
+
+.policyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+
+  border: 1px solid #e8eaf4;
+  border-radius: 12px;
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+.policyCard {
+  padding: 28px 30px;
+
+  border-right: 1px solid #e8eaf4;
+  border-bottom: 1px solid #e8eaf4;
+
+  transition: background 0.18s;
+}
+
+.policyCard:hover {
+  background: #fafbff;
+}
+
+/* Remove right border on last column */
+.policyCard:nth-child(2n) {
+  border-right: none;
+}
+
+/* Remove bottom border on last row */
+.policyCard:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+.policyCard h3 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1a2550;
+  margin: 0 0 10px;
+}
+
+.policyCard p {
+  font-size: 13.5px;
+  color: #5a6690;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ─────────────────────────────
+   CTA SECTION
+───────────────────────────── */
+
+.ctaSection {
+  margin: 0 48px 56px;
+
+  background: #ffffff;
+  border: 1px solid #e8eaf4;
+  border-radius: 16px;
+
+  padding: 48px 56px;
+}
+
+.ctaLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8898c8;
+  margin: 0 0 12px;
+}
+
+.ctaSection h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: #1a2550;
+  margin: 0 0 14px;
+  line-height: 1.2;
+}
+
+.ctaSection > p:not(.ctaLabel) {
+  font-size: 15px;
+  color: #5a6690;
+  max-width: 520px;
+  line-height: 1.7;
+  margin: 0 0 32px;
+}
+
+.ctaBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ─────────────────────────────
+   CTA BUTTONS
+───────────────────────────── */
+
+.btnOutlineNavy {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  background: transparent;
+  border: 1.5px solid #c8ccdf;
+  color: #1a2550;
+
+  padding: 10px 18px;
+  border-radius: 8px;
+
+  font-size: 13.5px;
+  font-weight: 500;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  transition:
+    border-color 0.18s,
+    background 0.18s;
+}
+
+.btnOutlineNavy:hover {
+  border-color: #1a2550;
+  background: #f0f2fb;
+}
+
+.btnGreen {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  background: #22c55e;
+  border: none;
+  color: #ffffff;
+
+  padding: 10px 18px;
+  border-radius: 8px;
+
+  font-size: 13.5px;
+  font-weight: 600;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: background 0.18s;
+}
+
+.btnGreen:hover {
+  background: #16a34a;
+}
+
+/* ─────────────────────────────
+   ICON
+───────────────────────────── */
+
+.icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────
+   RESPONSIVE
+───────────────────────────── */
+
+@media (max-width: 1024px) {
+  .privacyHeader {
+    margin: 48px 28px 40px;
+  }
+
+  .policySection {
+    margin: 0 28px 48px;
+  }
+
+  .ctaSection {
+    margin: 0 28px 48px;
+    padding: 40px 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .privacyHeader {
+    margin: 36px 20px 32px;
+  }
+
+  .privacyHeader h1 {
+    font-size: 2rem;
+  }
+
+  .policySection {
+    margin: 0 20px 40px;
+  }
+
+  .policyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .policyCard {
+    border-right: none;
+  }
+
+  .policyCard:nth-last-child(-n + 2) {
+    border-bottom: 1px solid #e8eaf4;
+  }
+
+  .policyCard:last-child {
+    border-bottom: none;
+  }
+
+  .ctaSection {
+    margin: 0 20px 40px;
+    padding: 32px 24px;
+  }
+
+  .ctaBtns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btnOutlineNavy,
+  .btnGreen {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacyHeader {
+    margin: 28px 16px 24px;
+  }
+
+  .policySection {
+    margin: 0 16px 32px;
+  }
+
+  .policyCard {
+    padding: 22px 20px;
+  }
+
+  .ctaSection {
+    margin: 0 16px 32px;
+    padding: 28px 20px;
+  }
+
+  .privacyHeader h1 {
+    font-size: 1.8rem;
+  }
+}
+

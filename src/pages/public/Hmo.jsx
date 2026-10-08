@@ -85,7 +85,8 @@ export default function HMO() {
       }
 
       if (!res.ok) {
-        if (data.validationErrors && typeof data.validationErrors === 'object') {
+        const fieldErrors = data.errors || data.validationErrors;
+        if (fieldErrors && typeof fieldErrors === 'object') {
           const fieldMap = {
             companyName:    'companyName',
             companySize:    'companySize',
@@ -96,7 +97,7 @@ export default function HMO() {
             industry:       'industry',
           };
           const mapped = {};
-          Object.entries(data.validationErrors).forEach(([k, v]) => {
+          Object.entries(fieldErrors).forEach(([k, v]) => {
             mapped[fieldMap[k] || k] = v;
           });
           setErrors(mapped);

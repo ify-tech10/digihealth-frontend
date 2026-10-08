@@ -144,7 +144,27 @@
   user-select: none;
 }
 .checkItem:hover { border-color: var(--navy); background: #f0f2fb; }
-.checkItem input[type="checkbox"] { accent-color: var(--navy); width: 14px; height: 14px; }
+/* undo the text-input styling above so the tick shows */
+.group .checkItem input[type="checkbox"] {
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  accent-color: var(--navy);
+  width: 15px; height: 15px;
+  margin: 0; padding: 0;
+  border: none; border-radius: 3px;
+  box-shadow: none;
+  background: none;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+/* selected options stand out */
+.checkItem:has(input:checked) {
+  border-color: var(--navy);
+  background: #e8ecf8;
+  color: var(--navy);
+  font-weight: 600;
+}
+.checkItem:has(input:focus-visible) { box-shadow: 0 0 0 3px rgba(26,37,80,0.12); }
 
 /* ── FILE UPLOAD BOX ── */
 .fileBox {

@@ -140,16 +140,16 @@ export default function Apply() {
 
     const fd = new FormData();
     fd.append('fullName',             form.fullName);
-    fd.append('Email',                form.email);
+    fd.append('email',                form.email.trim().toLowerCase());
     fd.append('phoneNumber',          form.phone);
     fd.append('serviceProviderType',  form.caregiverType);
     fd.append('address',              form.address);
-    fd.append('applicant_gender',     form.gender);
-    fd.append('YearsOfExperience',    form.experience);
+    fd.append('gender',               form.gender);
+    fd.append('yearsOfExperience',    form.experience);
     fd.append('qualification',        form.qualification);
-    fd.append('employment_status',    form.employmentStatus);
+    fd.append('employmentStatus',     form.employmentStatus);
     fd.append('specialisations',      form.specialisations.join(', ') || 'None selected');
-    fd.append('professional_summary', form.professionalSummary);
+    fd.append('professionalSummary',  form.professionalSummary);
     if (files.cv)      fd.append('cv',          files.cv);
     if (files.cert)    fd.append('certificate', files.cert);
     if (files.id)      fd.append('governmentId',files.id);
@@ -165,8 +165,8 @@ export default function Apply() {
     fd.append('availabilityType',form.availabilityType);
     fd.append('preferredHours',  form.preferredHours.join(', ') || 'None selected');
     fd.append('locationArea',    form.clinicalCoverage || 'Not specified');
-    fd.append('start_date',      form.startDate        || 'Not specified');
-    fd.append('additional_info', form.additionalInfo   || 'None');
+    fd.append('startDate',       form.startDate        || 'Not specified');
+    fd.append('additionalInfo',  form.additionalInfo   || 'None');
 
     try {
       const res  = await fetch(`${API_BASE}/auth/provider/apply`, { method:'POST', body:fd });
@@ -176,10 +176,11 @@ export default function Apply() {
       }
 
       if (!res.ok) {
-        if (data.validationErrors) {
+        const fieldErrors = data.errors || data.validationErrors;
+        if (fieldErrors && typeof fieldErrors === 'object') {
           const mapped = {};
-          const map = { email:'email', phoneNumber:'phone' };
-          Object.entries(data.validationErrors).forEach(([k,v]) => { mapped[map[k]||k] = v; });
+          const map = { email:'email', phoneNumber:'phone', serviceProviderType:'caregiverType', yearsOfExperience:'experience', locationArea:'clinicalCoverage' };
+          Object.entries(fieldErrors).forEach(([k,v]) => { mapped[map[k]||k] = v; });
           setErrors(mapped);
         } else {
           setErrors({ general: data.message || 'Submission failed. Please try again.' });
@@ -381,7 +382,7 @@ export default function Apply() {
                     <option value="BADAGRY">Badagry</option>
                     <option value="EPE">Epe</option>
                     <option value="ETI_OSA">Eti-Osa</option>
-                    <option value="IBIJU_LEKKI">Ibeju-Lekki</option>
+                    <option value="IBEJU_LEKKI">Ibeju-Lekki</option>
                     <option value="IFAKO_IJAIYE">Ifako-Ijaiye</option>
                     <option value="IKEJA">Ikeja</option>
                     <option value="IKORODU">Ikorodu</option>
